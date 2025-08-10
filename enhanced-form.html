@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+    header, main, footer {
+      margin-bottom: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    th {
+      background-color: #f7f7f7;
+    }
+    form > * + * {
+      margin-top: 1rem;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 0.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.4rem;
+      box-sizing: border-box;
+    }
+    .readonly-input {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Enhanced HTML5 Form Demo</h1>
+  <p>This form demonstrates semantic HTML5, validation, and accessible layout.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Features List</h2>
+    <ul>
+      <li>Semantic tags: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+      <li>Lists and tables for structured content</li>
+      <li>Various input types with validation</li>
+      <li>Accessible labels and layout</li>
+      <li>Media embedding with <code>&lt;img&gt;</code> and <code>&lt;video&gt;</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example Data Table</h2>
+    <table>
+      <caption>Sample Product List</caption>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price (USD)</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wireless Mouse</td>
+          <td>25.99</td>
+          <td>In Stock</td>
+        </tr>
+        <tr>
+          <td>Mechanical Keyboard</td>
+          <td>79.99</td>
+          <td>Limited</td>
+        </tr>
+        <tr>
+          <td>USB-C Hub</td>
+          <td>39.50</td>
+          <td>Out of Stock</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Product Demo Video</h2>
+    <video width="100%" controls>
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+ <section>
+    <h2>Product Demo Audio</h2>
+    <audio width="100%" controls>
+      <source src="https://www.epidemicsound.com/track/EdiWdHkUWR/" type="video/mp3" />
+      Your browser does not support the audio tag.
+    </audio>
+  </section>
+  <section>
+    <h2>Complete HTML5 Form</h2>
+
+    <form action="#" method="post" novalidate>
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fullName">Full Name <sup>*</sup></label>
+        <input 
+          type="text" 
+          id="fullName" 
+          name="fullName" 
+          placeholder="Enter your full name" 
+          required 
+          autocomplete="name" />
+
+        <label for="email">Email Address <sup>*</sup></label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="example@mail.com" 
+          required 
+          autocomplete="email" />
+
+        <label for="phone">Phone Number</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          placeholder="+251 911 74 37 90
+          pattern="^\+?\d{1,4}[-.\s]?\(?\d{1,5}\)?[-.\s]?\d{1,5}[-.\s]?\d{1,9}$" 
+          autocomplete="tel" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Account Details</legend>
+
+        <label for="username">Username <sup>*</sup></label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          placeholder="Choose a username" 
+          required 
+          minlength="4" maxlength="20" 
+          autocomplete="username" />
+
+        <label for="password">Password <sup>*</sup></label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder="Create a password" 
+          required 
+          minlength="8" 
+          autocomplete="new-password" />
+
+        <label for="confirmPassword">Confirm Password <sup>*</sup></label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          name="confirmPassword" 
+          placeholder="Re-enter your password" 
+          required 
+          minlength="8" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <label for="color">Favorite Color</label>
+        <input 
+          type="color" 
+          id="color" 
+          name="color" 
+          value="#0000ff" />
+
+        <label for="birthdate">Date of Birth</label>
+        <input 
+          type="date" 
+          id="birthdate" 
+          name="birthdate" 
+          max="2025-12-31" />
+
+        <label for="website">Website (readonly)</label>
+        <input 
+          type="url" 
+          id="website" 
+          name="website" 
+          value="https://example.com" 
+          readonly 
+          class="readonly-input" />
+
+        <label for="newsletter">Subscribe to newsletter</label>
+        <input 
+          type="checkbox" 
+          id="newsletter" 
+          name="newsletter" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Feedback</legend>
+
+        <label for="feedback">Your Comments</label>
+        <textarea 
+          id="feedback" 
+          name="feedback" 
+          rows="4" 
+          placeholder="Write your feedback here..."></textarea>
+
+        <label for="rating">Rate our service</label>
+        <select id="rating" name="rating" required>
+          <option value="" disabled selected>Select rating</option>
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Fisseha Shimelash</p>
+</footer>
+
+</body>
+</html>
